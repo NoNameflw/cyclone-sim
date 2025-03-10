@@ -660,7 +660,7 @@ UI.init = function(){
 
     let desigsel = hemsel.append(false,0,basinCreationMenuButtonSpacing,basinCreationMenuButtonWidths,basinCreationMenuButtonHeights,function(s){    // Scale selector
         let scale = advancedBasinSettings.scale || 0;
-        scale = Scale.presetScales[scale].displayName;
+		scale = Scale.presetScales[scale].displayName;
         s.button('Scale: '+scale,true);
     },function(){
         if(advancedBasinSettings.scale===undefined) advancedBasinSettings.scale = 0;
@@ -2635,10 +2635,29 @@ function compassHeading(rad){
 
 function damageDisplayNumber(d){
     if(d===0) return "none";
-    if(d<50000000) return "minimal";
-    if(d<1000000000) return "$ " + (round(d/1000)/1000) + " M";
-    if(d<1000000000000) return "$ " + (round(d/1000000)/1000) + " B";
-    return "$ " + (round(d/1000000000)/1000) + " T";
+	if(d<10**3) return "$" + d;
+    if(d<10**6) return "$" + (round(d)/1000) + "K";				//thousand
+    if(d<10**9) return "$" + (round(d/10**3)/1000) + "M";		//million
+    if(d<10**12) return "$" + (round(d/10**6)/1000) + "B";		//billion
+    if(d<10**15) return "$" + (round(d/10**9)/1000) + "T";		//trillion
+    if(d<10**18) return "$" + (round(d/10**12)/1000) + "q";		//quadrillion
+    if(d<10**21) return "$" + (round(d/10**15)/1000) + "Q"		//quintillion
+    if(d<10**24) return "$" + (round(d/10**18)/1000) + "s"		//sextillion
+    if(d<10**27) return "$" + (round(d/10**21)/1000) + "S"		//septillion
+    if(d<10**30) return "$" + (round(d/10**24)/1000) + "O"		//octillion
+    if(d<10**33) return "$" + (round(d/10**27)/1000) + "N"		//nonillion
+    if(d<10**36) return "$" + (round(d/10**30)/1000) + "D"		//decillion
+    if(d<10**39) return "$" + (round(d/10**33)/1000) + "Uc"		//undecillion
+    if(d<10**42) return "$" + (round(d/10**36)/1000) + "Dc"		//duodecillion
+    if(d<10**45) return "$" + (round(d/10**39)/1000) + "Tc"		//tredecillion
+    if(d<10**48) return "$" + (round(d/10**42)/1000) + "qc"		//quattuordecillion
+    if(d<10**51) return "$" + (round(d/10**45)/1000) + "Qc"		//quindecillion
+    if(d<10**54) return "$" + (round(d/10**48)/1000) + "sc"		//sexdecillion
+    if(d<10**57) return "$" + (round(d/10**51)/1000) + "Sc"		//septendecillion
+    if(d<10**60) return "$" + (round(d/10**54)/1000) + "Oc"		//octodecillion
+    if(d<10**63) return "$" + (round(d/10**57)/1000) + "Nc"		//novemdecillion
+    if(d<10**66) return "$" + (round(d/10**60)/1000) + "Vg"		//vigintillion
+    return "$" + (round((d/10**303)/1000)) + "Cn"				//centillion (the simulation is probably fucked if you get *this*)
 }
 
 function formatDate(m){

@@ -399,6 +399,24 @@ Scale.extendedSaffirSimpson = new Scale({
             stormNom: ['Hypercane','Hyperphoon','Hyperclone'],
             stat: ['Hypercanes','Hyperphoons','Hyperclones'],
             cName: 'Hypercane'
+        },
+        {
+            threshold: 869,
+            color: '$MGC',
+            symbol: 'MG',
+            cName: 'Megacane'
+        },
+        {
+            threshold: 1303,
+            color: '$INF',
+            symbol: 'IS',
+            cName: 'Infinite Storm'
+        },
+        {
+            threshold: 1737,
+            color: '$MBH',
+            symbol: 'MBH',
+            cName: 'Mini Black Hole'
         }
     ]
 });
@@ -716,7 +734,10 @@ const COLOR_SCHEMES = [
             'C8': 'rgb(190,60,60)',
             'C9': 'rgb(130,10,10)',
             'C10': 'rgb(120,10,120)',
-            'HYC': 'rgb(20,0,140)'
+            'HYC': 'rgb(20,0,140)',
+            'MGC': 'rgb(0,100,100)',
+            'INF': 'rgb(0,50,00)',
+            'MBH': 'rgb(0,0,0)'
         }
     },
     {
@@ -742,7 +763,10 @@ const COLOR_SCHEMES = [
             'C8': '#A188FC',
             'C9': '#A188FC',
             'C10': '#A188FC',
-            'HYC': '#A188FC'
+            'HYC': '#A188FC',
+            'MGC': '#A188FC',
+            'INF': '#A188FC',
+            'MBH': '#A188FC'
         }
     },
     {
@@ -768,7 +792,10 @@ const COLOR_SCHEMES = [
             'C8': '#cc0066',
             'C9': '#9B30FF',
             'C10': '#F9A7B0',
-            'HYC': '#ff99ff'
+            'HYC': '#ff99ff',
+            'MGC': '#ffcccc',
+            'INF': '#00cc33',
+            'MBH': '#99ccff'
         }
     }
 ];

@@ -1201,8 +1201,9 @@ class ActiveSystem extends StormData{
         let x = floor(this.pos.x);
         let y = floor(this.pos.y);
         let p = floor(this.pressure);
-        let w = round(this.windSpeed/WINDSPEED_ROUNDING)*WINDSPEED_ROUNDING;
-        let ty = this.type;
+        //let w = round(this.windSpeed/WINDSPEED_ROUNDING)*WINDSPEED_ROUNDING;
+        let w = round(this.windSpeed);
+		let ty = this.type;
         let adv = new StormData(this.basin,x,y,p,w,ty);
         this.fetchStorm().updateStats(adv);
         this.fetchStorm().record.push(adv);

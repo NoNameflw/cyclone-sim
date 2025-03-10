@@ -1,5 +1,22 @@
 About: A p5.js tropical cyclone simulation game
 
+v1.0.0
+    *Manually spawned storms are much likelier to explode in Experimental
+    *Made Megablobs astronomically hotter
+    *Moisture is now set to 100%, at all times, everywhere in the basin (excluding for Wild)
+    *Three new ESSHWS categories
+        >Megacanes, past 1000 MPH
+        >Infinite Storms, past 1500 MPH
+        >Mini Black Holes, past 2000 MPH
+    *Damage scales extended
+	>Added quadrillion, quintillion, sextillion, septillion, octillion, nonillion and decillion divisions
+	>Also removed 'minimal' and put exact numbers and thousands of dollars in their place
+
+
+Forked version:
+v0.4.22 (2024-12-31)
+
+PRE-FORK CHANGELOG
 v0.4.22 (2024-12-31):
     * Updated name lists for PAGASA, Australian Region, South-West Indian Ocean, South Pacific, and Mediterranean
 v0.4.21 (2024-10-31):

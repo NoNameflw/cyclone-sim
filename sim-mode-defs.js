@@ -258,7 +258,7 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
         lowerWarmCore: 1,
         upperWarmCore: 1,
         depth: 0,
-        kaboom: 0.2
+        kaboom: 0.9
     },
     'l': {
         inherit: 'tw',
@@ -689,8 +689,8 @@ ENV_DEFS[SIM_MODE_WILD].SSTAnomaly = {
 };
 ENV_DEFS[SIM_MODE_MEGABLOBS].SSTAnomaly = {
     modifiers: {
-        r: 7,
-        bigBlobBase: 1.8,
+        r: 7, //base 7
+        bigBlobBase: 25, //base 1.8
         bigBlobExponentThreshold: 1
     }
 };
@@ -801,7 +801,7 @@ ENV_DEFS.defaults.moisture = {
         m += map(s,-1,1,-0.08,0.08);
         m += map(v,0,1,-0.3,0.3);
         m = constrain(m,0,1);
-        return m;
+        return 1;
     },
     displayFormat: v=>{
         return round(v*1000)/10 + '%';
